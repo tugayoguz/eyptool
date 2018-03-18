@@ -1,0 +1,34 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.service.builder.impl;
+
+import dpt.eYazisma.tipler.Paket;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakEkDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.service.builder.EypBuilder;
+
+public class EypBuilderImpl implements EypBuilder{
+
+	private Paket paket;
+	
+	public EypBuilderImpl(){
+		paket = Paket.ac(calismaKlasoru + dosyaYolu, PaketModu.Olustur);
+	}
+	
+	@Override
+	public EypBuilder addEvrak(EvrakDTO evrak) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EypBuilder addEk(EvrakEkDTO ek) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Paket buildInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

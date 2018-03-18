@@ -89,12 +89,22 @@ public class EvrakDTO extends BaseDTO{
 	private String repeatForAllPages;
 	
 	private String pagesToBeStamped;
+	
+	private EvrakIcerikDTO icerik;
 
 	
 	//GETTER AND SETTER
 	
 	public Long getIcerikDosyaNo() {
 		return icerikDosyaNo;
+	}
+
+	public EvrakIcerikDTO getIcerik() {
+		return icerik;
+	}
+
+	public void setIcerik(EvrakIcerikDTO icerik) {
+		this.icerik = icerik;
 	}
 
 	public void setIcerikDosyaNo(Long icerikDosyaNo) {

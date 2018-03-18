@@ -1,0 +1,55 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.presentation.controller.impl;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.core.Controller;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakEkDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakIcerikDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.presentation.controller.LoginController;
+import tr.com.vortechs.bilisim.bys.eyp.tool.presentation.model.LoginModel;
+import tr.com.vortechs.bilisim.bys.eyp.tool.presentation.view.LoginView;
+import tr.com.vortechs.bilisim.bys.eyp.tool.service.EvrakSifreService;
+import tr.com.vortechs.bilisim.bys.eyp.tool.service.builder.EypBuilder;
+
+@Controller
+public class LoginControllerImpl extends BaseControllerImpl<LoginView, LoginModel> implements LoginController{
+
+	@Autowired
+	private EypBuilder eypBuilder;
+
+	@Override
+	public void bindViewModel()
+	{
+		getView().getButton().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					EvrakDTO evrak = new EvrakDTO();
+					evrak.setKonuText("deneme");
+					evrak.setEvrakTarihi(new Date());
+					evrak.setEvrakSayi("123123");
+					EvrakIcerikDTO icerik = new EvrakIcerikDTO();
+					icerik.setDosyaIcerik(Files.readAllBytes(Paths.get("D:/test.pdf")));
+					evrak.setIcerik(icerik);
+					
+					eypBuilder
+						.setEvrakOlusturan()
+						.addEvrak(evrak)
+						.buildInstance();
+				} catch (Exception e1) {
+					System.out.println(e1.getMessage());
+				}
+				//navigateTo(HomeControllerImpl.class);
+			}
+		});
+	}
+
+}

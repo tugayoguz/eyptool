@@ -1,0 +1,84 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.service.builder.impl;
+
+import java.util.UUID;
+
+import dpt.eYazisma.tipler.OzetModu;
+import dpt.eYazisma.tipler.Paket;
+import dpt.eYazisma.tipler.PaketModu;
+import tr.com.vortechs.bilisim.bys.eyp.tool.context.EypToolConstants;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakEkDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.service.builder.EypBuilder;
+import urn.dpt.eyazisma.schema.xsd.tipler.CTIletisimBilgisi;
+import urn.dpt.eyazisma.schema.xsd.tipler.CTKurumKurulus;
+import urn.un.unece.uncefact.codelist.specification.unqualifieddatatypesschemaModule._2.NameType;
+import urn.un.unece.uncefact.codelist.specification.unqualifieddatatypesschemaModule._2.TextType;
+
+public class EypBuilderImpl implements EypBuilder{
+
+	private Paket paket;
+	private String path = "";
+	
+	public EypBuilderImpl() throws Exception{
+		paket = Paket.ac(path + UUID.randomUUID(), PaketModu.Olustur);
+		
+		
+	}
+	
+	@Override
+	public EypBuilder addEvrak(EvrakDTO evrak) throws Exception {
+		TextType konu = new TextType(); 
+		konu.setValue(evrak.getKonuText());
+		paket.getUstveri().konuBelirle(konu);
+		paket.getUstveri().belgeNoBelirle(evrak.getEvrakSayi());
+		paket.ustYaziEkle(path "application/pdf", OzetModu.SHA256);
+		return this;
+	}
+
+	@Override
+	public EypBuilder addEk(EvrakEkDTO ek)  throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Paket buildInstance()  throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EypBuilder setEvrakOlusturan() throws Exception {
+		
+		CTKurumKurulus olusturan = new CTKurumKurulus();
+		olusturan.setKKK(EypToolConstants.kkk); 
+		
+		olusturan.setAdi(new NameType());
+		olusturan.getAdi().setValue(EypToolConstants.kurumAdi);
+
+		CTIletisimBilgisi ib = new CTIletisimBilgisi();
+		
+		ib.setUlke(new NameType());
+		ib.getUlke().setValue(EypToolConstants.ulke);
+		
+		ib.setIl(new NameType());
+		ib.getIl().setValue(EypToolConstants.il);
+		
+		ib.setIlce(new NameType());
+		ib.getIlce().setValue(EypToolConstants.ilce);
+		
+		ib.setAdres(new TextType());
+		ib.getAdres().setValue(EypToolConstants.address);
+
+		ib.setEPosta(EypToolConstants.eposta); 
+		ib.setTelefon(EypToolConstants.telefon);
+		ib.setTelefonDiger(EypToolConstants.digerTelefon);
+		ib.setWebAdresi(EypToolConstants.webSitesi);
+		
+		olusturan.setIletisimBilgisi(ib);
+		
+		paket.getUstveri().olusturanBelirle(olusturan);
+		return this;
+	}
+
+}

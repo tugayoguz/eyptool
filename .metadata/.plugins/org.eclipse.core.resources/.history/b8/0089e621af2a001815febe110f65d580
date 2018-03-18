@@ -1,0 +1,8 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.service.builder;
+
+import dpt.eYazisma.tipler.Paket;
+
+public interface EypBuilder {
+
+	Paket buildInstance();
+}

@@ -1,0 +1,6 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.service.builder;
+
+public interface EypBuilder {
+
+	Paket buildInstance();
+}

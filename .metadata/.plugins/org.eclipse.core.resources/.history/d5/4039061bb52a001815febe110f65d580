@@ -1,0 +1,7 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.service.impl;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.service.EvrakSifreService;
+
+public class EvrakSifreServiceImpl implements EvrakSifreService {
+
+}

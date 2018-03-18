@@ -1,0 +1,7 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.context;
+
+public class EypToolConstants {
+
+	// Kurum Bilgileri
+	private String kkk = "kkk"; // toros kurum kimlik kodu
+}

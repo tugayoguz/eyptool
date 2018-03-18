@@ -22,7 +22,7 @@ public class BysEypToolConfiguration {
 		EmbeddedDatabase db = builder
 			.setType(EmbeddedDatabaseType.HSQL) 
 			.addScript("db/sql/create-db.sql")
-			.addScript("db/sql/insert-data.sql")
+			//.addScript("db/sql/insert-data.sql")
 			.build();
 		return db;
 	}
