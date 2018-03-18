@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.Blob"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.presentation.controller.LoginController"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakDao"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapperResultSetExtractor"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.dao.mapper.EvrakDosyaDTOMapper"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.BaseDTO"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakIcerikDTO"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakIcerikDao"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakHareketDao"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.dao.BaseDao"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.dao.impl.BaseDaoImpl"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakEkDao"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakHareketDTO"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakEkDTO"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakDosyaDTO"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakDTO"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.DosyaDTO"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.service.EvrakEkService"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.service.EvrakHareketService"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.service.EvrakIcerikService"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.service.impl.BaseServiceImpl"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.service.EvrakService"/>
+<fullyQualifiedTypeName name="tr.com.vortechs.bilisim.bys.eyp.tool.service.BaseService"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.datasource.embedded.DataSourceFactory"/>
+</qualifiedTypeNameHistroy>
