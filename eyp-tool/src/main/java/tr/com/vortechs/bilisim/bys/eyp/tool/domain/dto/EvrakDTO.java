@@ -1,6 +1,7 @@
 package tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class EvrakDTO extends BaseDTO{
 
@@ -91,6 +92,10 @@ public class EvrakDTO extends BaseDTO{
 	private String pagesToBeStamped;
 	
 	private EvrakIcerikDTO icerik;
+	
+	private List<EvrakEkDTO> evrakEkDTOList;
+	
+	private List<EvrakPostaDTO> evrakPostaDTOList;
 
 	
 	//GETTER AND SETTER
@@ -446,9 +451,22 @@ public class EvrakDTO extends BaseDTO{
 	public void setPagesToBeStamped(String pagesToBeStamped) {
 		this.pagesToBeStamped = pagesToBeStamped;
 	}
-	
-	
-	
+
+	public List<EvrakEkDTO> getEvrakEkDTOList() {
+		return evrakEkDTOList;
+	}
+
+	public void setEvrakEkDTOList(List<EvrakEkDTO> evrakEkDTOList) {
+		this.evrakEkDTOList = evrakEkDTOList;
+	}
+
+	public List<EvrakPostaDTO> getEvrakPostaDTOList() {
+		return evrakPostaDTOList;
+	}
+
+	public void setEvrakPostaDTOList(List<EvrakPostaDTO> evrakPostaDTOList) {
+		this.evrakPostaDTOList = evrakPostaDTOList;
+	}
 	
 }
 	

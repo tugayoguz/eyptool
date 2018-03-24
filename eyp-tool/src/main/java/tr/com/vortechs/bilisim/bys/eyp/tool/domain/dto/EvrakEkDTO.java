@@ -14,6 +14,8 @@ public class EvrakEkDTO extends BaseDTO{
 	
 	private String ekSurumlenebilir;
 	
+	private EvrakIcerikDTO evrakIcerikDTO;
+	
 	//GETTER AND SETTER
 	public Long getEvrakNo() {
 		return evrakNo;
@@ -61,6 +63,14 @@ public class EvrakEkDTO extends BaseDTO{
 
 	public void setEkSurumlenebilir(String ekSurumlenebilir) {
 		this.ekSurumlenebilir = ekSurumlenebilir;
+	}
+
+	public EvrakIcerikDTO getEvrakIcerikDTO() {
+		return evrakIcerikDTO;
+	}
+
+	public void setEvrakIcerikDTO(EvrakIcerikDTO evrakIcerikDTO) {
+		this.evrakIcerikDTO = evrakIcerikDTO;
 	}
 	
 	

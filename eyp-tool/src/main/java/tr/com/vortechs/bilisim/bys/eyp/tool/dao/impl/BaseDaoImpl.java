@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import tr.com.vortechs.bilisim.bys.eyp.tool.dao.BaseDao;
 import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.BaseDTO;
 
+@Repository
 public class BaseDaoImpl<D extends BaseDTO> implements BaseDao<D>{
 	
 	@Autowired

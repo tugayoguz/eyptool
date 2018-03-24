@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import org.apache.poi.openxml4j.util.Nullable;
@@ -23,6 +24,8 @@ import tr.com.vortechs.bilisim.bys.eyp.tool.service.builder.EypBuilder;
 import urn.dpt.eyazisma.schema.xsd.koddagitimturu.STKodDagitimTuru;
 import urn.dpt.eyazisma.schema.xsd.kodivedilik.STKodIvedilik;
 import urn.dpt.eyazisma.schema.xsd.tipler.CTDagitim;
+import urn.dpt.eyazisma.schema.xsd.tipler.CTEk;
+import urn.dpt.eyazisma.schema.xsd.tipler.CTEkler;
 import urn.dpt.eyazisma.schema.xsd.tipler.CTGercekSahis;
 import urn.dpt.eyazisma.schema.xsd.tipler.CTIletisimBilgisi;
 import urn.dpt.eyazisma.schema.xsd.tipler.CTImza;
@@ -36,16 +39,16 @@ public class EypBuilderImpl implements EypBuilder{
 
 	@Autowired
 	private EvrakSifreService sifreService;
-	
+
 	private Paket paket;
 	private String path = "";
-	
+
 	public EypBuilderImpl() throws Exception{
 		paket = Paket.ac(path + UUID.randomUUID(), PaketModu.Olustur);
-		
-		
+
+
 	}
-	
+
 	@Override
 	public EypBuilder addEvrak(EvrakDTO evrak) throws Exception {
 		String ustYazi = "ustyazitemp.pdf";
@@ -53,29 +56,31 @@ public class EypBuilderImpl implements EypBuilder{
 		konu.setValue(evrak.getKonuText());
 		paket.getUstveri().konuBelirle(konu);
 		paket.getUstveri().belgeNoBelirle(evrak.getEvrakSayi());
-		
+
 		Files.write(Paths.get(path + ustYazi),sifreService.sifreCoz(evrak.getIcerik().getDosyaIcerik()));
 		paket.ustYaziEkle(path + ustYazi, "application/pdf", OzetModu.SHA256);
-		
+
 		paket.getUstveri().belgeIdBelirle(UUID.randomUUID());
 		paket.getUstveri().tarihBelirle(Calendar.getInstance());
 		paket.getUstveri().dosyaAdiBelirle(evrak.getKonuText());
-		
-		
+
+
 		paket.paketAnahtarKelimeleriBelirle(evrak.getId()+","+evrak.getKonuText());  // Paketin Core bileşeninin unsurları tanımlanmaktadır.
 		paket.paketBasligiBelirle(evrak.getKonuText()); 
 		paket.paketDurumuBelirle("Son"); 
 		paket.paketOlusturulmaTarihiBelirle(new Date()); 
 		paket.paketSonGuncelleyenBelirle(EypToolConstants.kurumAdi); 
 		paket.paketGuncellemeTarihiBelirle(new Nullable<Date>(new Date())); 
-		
+
 		return this;
 	}
 
 	@Override
-	public EypBuilder addEk(EvrakEkDTO ek)  throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public EypBuilder addEk(List<EvrakEkDTO> ekler)  throws Exception {
+		for(EvrakEkDTO ekDTO : ekler){
+			CTEk ek = new CTEk();
+			}
+		return this;
 	}
 
 	@Override
@@ -101,24 +106,24 @@ public class EypBuilderImpl implements EypBuilder{
 
 	@Override
 	public EypBuilder setEvrakOlusturan() throws Exception {
-		
+
 		CTKurumKurulus olusturan = new CTKurumKurulus();
 		olusturan.setKKK(EypToolConstants.kkk); 
-		
+
 		olusturan.setAdi(new NameType());
 		olusturan.getAdi().setValue(EypToolConstants.kurumAdi);
 
 		CTIletisimBilgisi ib = new CTIletisimBilgisi();
-		
+
 		ib.setUlke(new NameType());
 		ib.getUlke().setValue(EypToolConstants.ulke);
-		
+
 		ib.setIl(new NameType());
 		ib.getIl().setValue(EypToolConstants.il);
-		
+
 		ib.setIlce(new NameType());
 		ib.getIlce().setValue(EypToolConstants.ilce);
-		
+
 		ib.setAdres(new TextType());
 		ib.getAdres().setValue(EypToolConstants.address);
 
@@ -126,21 +131,21 @@ public class EypBuilderImpl implements EypBuilder{
 		ib.setTelefon(EypToolConstants.telefon);
 		ib.setTelefonDiger(EypToolConstants.digerTelefon);
 		ib.setWebAdresi(EypToolConstants.webSitesi);
-		
+
 		olusturan.setIletisimBilgisi(ib);
-		
+
 		paket.getUstveri().olusturanBelirle(olusturan);
 		return this;
 	}
 
 	@Override
 	public EypBuilder addDagitim() throws Exception {
-		CTDagitim dagitim3 = new CTDagitim();
-		dagitim3.setKurumKurulus(new CTKurumKurulus());
-		dagitim3.getKurumKurulus().setKKK("24306170");
-		dagitim3.setDagitimTuru(STKodDagitimTuru.GRG);
-		dagitim3.setIvedilik(STKodIvedilik.NRM);
-		paket.getUstveri().dagitimEkle(dagitim3);
+		CTDagitim dagitim = new CTDagitim();
+		dagitim.setKurumKurulus(new CTKurumKurulus());
+		dagitim.getKurumKurulus().setKKK("24306170");
+		dagitim.setDagitimTuru(STKodDagitimTuru.GRG);
+		dagitim.setIvedilik(STKodIvedilik.NRM);
+		paket.getUstveri().dagitimEkle(dagitim);
 		return this;
 	}
 
@@ -161,7 +166,7 @@ public class EypBuilderImpl implements EypBuilder{
 		dagitim1.setDagitimTuru(STKodDagitimTuru.GRG);
 		dagitim1.setIvedilik(STKodIvedilik.IVD);
 		dagitim1.setKurumKurulus(dagitim1kurum);
-		
+
 		paket.getBelgeHedef().hedefEkle(Araclar.dagitim2Hedef(dagitim1));
 		return this;
 	}
