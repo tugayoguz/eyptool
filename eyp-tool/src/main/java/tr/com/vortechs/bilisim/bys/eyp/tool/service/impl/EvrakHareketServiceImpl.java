@@ -17,7 +17,7 @@ public class EvrakHareketServiceImpl extends BaseServiceImpl implements EvrakHar
 	
 	@Override
 	public List<EvrakHareketDTO> getEvrakHareketDTOWithRefNo(Long refNo) {
-		return getEvrakHareketDao();
+		return getEvrakHareketDao().getEvrakHareketDTOWithRefNo(refNo);
 	}
 
 	public EvrakHareketDao getEvrakHareketDao() {

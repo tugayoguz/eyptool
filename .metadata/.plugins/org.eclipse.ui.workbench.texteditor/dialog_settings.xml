@@ -8,14 +8,18 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="BYTE"/>
+			<item value="ENABLE"/>
+			<item value=" ),"/>
 			<item value="EvrakDurumu"/>
 			<item value="EvrakHareketDTO"/>
 			<item value="INTEGER(22,0)"/>
 			<item value="NUMBER"/>
 			<item value="&quot;"/>
-			<item value="VARCHAR2"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
+			<item value="),"/>
 			<item value="INTEGER"/>
 			<item value=" "/>
 			<item value="VARCHAR"/>

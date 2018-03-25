@@ -1,0 +1,8 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.service;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakPostaDao;
+
+public interface EvrakPostaService extends BaseService{
+
+	List<EvrakPostaDTO> getEvrakPostaDTOWithRefNo(Long refNo);
+}

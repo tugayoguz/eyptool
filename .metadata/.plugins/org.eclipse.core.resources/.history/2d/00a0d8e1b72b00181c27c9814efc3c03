@@ -1,0 +1,10 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.dao;
+
+import org.springframework.stereotype.Repository;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakEkDTO;
+
+public interface EvrakEkDao extends BaseDao<EvrakEkDTO>{
+
+	EvrakEkDTO getEvrakEkDTOWithEvrakRefNo(Long refNo);
+}

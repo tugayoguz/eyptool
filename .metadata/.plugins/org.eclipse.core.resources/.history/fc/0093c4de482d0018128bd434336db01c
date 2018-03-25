@@ -1,0 +1,30 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.dao.mapper;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakPostaDTO;
+
+public class EvrakPostaDTOMapper implements RowMapper<EvrakPostaDTO>{
+
+	@Override
+	public EvrakPostaDTO mapRow(ResultSet rs, int arg1) throws SQLException {
+		EvrakPostaDTO evrakPostaDTO = new EvrakPostaDTO();
+		evrakPostaDTO.setId(rs.getLong("POSTA_NO"));
+		evrakPostaDTO.setPostaTuru(rs.getString("POSTA_TURU"));
+		evrakPostaDTO.setEvrakMerkezi(rs.getLong("POSTA_TURU"));
+		evrakPostaDTO.setBirimEvrakNo(rs.getString("BIRIM_EVRAK_NO"));
+		evrakPostaDTO.setEvrakNo(rs.getLong("EVRAK_NO"));
+		evrakPostaDTO.setPostaTarihi(rs.getString("POSTA_TARIHI"));
+		evrakPostaDTO.setGramaj(rs.getBigDecimal("GRAMAJ"));
+		evrakPostaDTO.setUcret(rs.getBigDecimal("UCRET"));
+		evrakPostaDTO.setGonderenKarsiladi(rs.getString("GONDEREN_KARSILADI"));
+		evrakPostaDTO.setGonderilenYer(rs.getString("GONDERILEN_YER"));
+		evrakPostaDTO.setAciklama(rs.getString("ACIKLAMA"));
+		evrakPostaDTO.setBarkod(rs.getString("BARKOD"));
+		return null;
+	}
+
+}

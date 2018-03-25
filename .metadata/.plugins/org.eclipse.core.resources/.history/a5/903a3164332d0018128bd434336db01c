@@ -1,0 +1,39 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.dao.impl;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.stereotype.Repository;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakDao;
+import tr.com.vortechs.bilisim.bys.eyp.tool.dao.TestDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakDTO;
+
+@Repository
+public class EvrakDaoImpl extends BaseDaoImpl<EvrakDTO> implements EvrakDao{
+
+	@Override
+	public EvrakDTO getEvrakDTOWithRefNo(Long refNo) {
+		String query = "select * from T_EVR_EVRAK where EVRAK_NO = :refNo";
+		SqlParameterSource namedParameters=
+		EvrakDTO dtoList = getTemplate().execute(query, paramMap, action)
+				query(query, new HashMap<String,String>(), new RowMapper<TestDTO>() 
+		{
+			@Override
+			public TestDTO mapRow(ResultSet rs, int arg1) throws SQLException {
+				TestDTO dto = new TestDTO();
+				System.out.println(arg1);
+				dto.setId(rs.getInt("id"));
+				dto.setMail(rs.getString("email"));
+				dto.setName(rs.getString("name"));
+				return dto;
+			}
+		});
+		return dtoList;
+	}
+
+}

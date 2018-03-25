@@ -1,0 +1,12 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.dao.impl;
+
+import org.springframework.stereotype.Repository;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakPostaDao;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakPostaDTO;
+
+@Repository
+public class EvrakPostaDaoImpl extends BaseDaoImpl<EvrakPostaDTO> implements EvrakPostaDao{
+
+	
+}

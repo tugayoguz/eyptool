@@ -1,0 +1,8 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.dao.impl;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakPostaDao;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakPostaDTO;
+
+public class EvrakPostaDaoImpl extends BaseDaoImpl<EvrakPostaDTO> implements EvrakPostaDao{
+
+}

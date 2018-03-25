@@ -1,5 +1,0 @@
-package tr.com.vortechs.bilisim.bys.eyp.tool.service.builder.impl;
-
-public interface EypBuilderImpl {
-
-}

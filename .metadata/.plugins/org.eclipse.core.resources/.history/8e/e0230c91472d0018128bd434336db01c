@@ -1,0 +1,42 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto;
+
+import java.math.BigDecimal;
+
+public class EvrakPostaDTO extends BaseDTO{
+	
+	private String postaTuru;
+	
+	private Long evrakMerkezi;
+	
+	private String birimEvrakNo;
+	
+	private Long evrakNo;
+	
+	private String postaTarihi;
+	
+	private BigDecimal gramaj;
+	
+	private BigDecimal ucret;
+	
+	private String gonderenKarsiladi;
+	
+	private String gonderilenYer;
+	
+	private String aciklama;
+	
+	private String barkod;
+	
+	private String lastUpdateDate;
+	
+	private String adres;
+	
+	private String teslimAlan;
+	
+	private int locked;
+	
+	private int eYazismaIleGonderildi;
+	
+	private int kepIleGonderildi;
+	
+
+}

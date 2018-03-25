@@ -1,0 +1,19 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakPostaDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.service.EvrakPostaService;
+
+@Service
+public class EvrakPostaServiceImpl extends BaseServiceImpl implements EvrakPostaService{
+
+	@Override
+	public List<EvrakPostaDTO> getEvrakPostaDTOWithRefNo(Long refNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

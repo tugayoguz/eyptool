@@ -25,7 +25,6 @@ import urn.dpt.eyazisma.schema.xsd.koddagitimturu.STKodDagitimTuru;
 import urn.dpt.eyazisma.schema.xsd.kodivedilik.STKodIvedilik;
 import urn.dpt.eyazisma.schema.xsd.tipler.CTDagitim;
 import urn.dpt.eyazisma.schema.xsd.tipler.CTEk;
-import urn.dpt.eyazisma.schema.xsd.tipler.CTEkler;
 import urn.dpt.eyazisma.schema.xsd.tipler.CTGercekSahis;
 import urn.dpt.eyazisma.schema.xsd.tipler.CTIletisimBilgisi;
 import urn.dpt.eyazisma.schema.xsd.tipler.CTImza;

@@ -1,0 +1,17 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.dao.impl;
+
+import org.springframework.stereotype.Repository;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakEkDao;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakEkDTO;
+
+@Repository
+public class EvrakEkDaoImpl extends BaseDaoImpl<EvrakEkDTO> implements EvrakEkDao {
+
+	@Override
+	public EvrakEkDTO getEvrakEkDTOWithEvrakRefNo(Long refNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

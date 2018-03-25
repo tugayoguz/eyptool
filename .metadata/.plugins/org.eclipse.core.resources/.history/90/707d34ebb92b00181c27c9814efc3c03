@@ -1,0 +1,8 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.service;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakEkDTO;
+
+public interface EvrakEkService extends BaseService{
+
+	EvrakEkDTO getEvrakEkWithEvrakRefNo(Long refNo);
+}

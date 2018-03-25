@@ -1,0 +1,9 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.dao.mapper;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakPostaDTO;
+
+public class EvrakPostaDTOMapper implements RowMapper<EvrakPostaDTO>{
+
+}

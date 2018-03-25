@@ -1,0 +1,42 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.dao.EvrakDao;
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakDTO;
+import tr.com.vortechs.bilisim.bys.eyp.tool.service.EvrakIcerikService;
+import tr.com.vortechs.bilisim.bys.eyp.tool.service.EvrakService;
+
+public class EvrakServiceImpl extends BaseServiceImpl implements EvrakService{
+
+	@Autowired
+	private EvrakIcerikService evrakIcerikService;
+	
+	@Autowired
+	private EvrakDao evrakDao;
+	
+	public EvrakDTO getEvrakDTOWithRefNo(Long refNo){
+		EvrakDTO evrakDTO = 
+		 
+	}
+
+	public EvrakIcerikService getEvrakIcerikService() {
+		return evrakIcerikService;
+	}
+
+	public void setEvrakIcerikService(EvrakIcerikService evrakIcerikService) {
+		this.evrakIcerikService = evrakIcerikService;
+	}
+
+	public EvrakDao getEvrakDao() {
+		return evrakDao;
+	}
+
+	public void setEvrakDao(EvrakDao evrakDao) {
+		this.evrakDao = evrakDao;
+	}
+	
+	
+	
+	
+}

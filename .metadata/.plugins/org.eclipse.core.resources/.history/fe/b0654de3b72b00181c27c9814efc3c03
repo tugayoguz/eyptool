@@ -1,0 +1,9 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.dao;
+
+import org.springframework.stereotype.Repository;
+
+import tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto.EvrakHareketDTO;
+
+public interface EvrakHareketDao extends BaseDao<EvrakHareketDTO>{
+
+}

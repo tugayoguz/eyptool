@@ -1,7 +1,0 @@
-package tr.com.vortechs.bilisim.bys.eyp.tool.service.builder.impl;
-
-import tr.com.vortechs.bilisim.bys.eyp.tool.service.builder.EypBuilder;
-
-public class EypBuilderImpl implements EypBuilder{
-
-}

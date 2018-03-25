@@ -1,0 +1,8 @@
+package tr.com.vortechs.bilisim.bys.eyp.tool.domain.dto;
+
+public class EvrakPostaDTO extends BaseDTO{
+	
+	private String postaTuru;
+	
+
+}
