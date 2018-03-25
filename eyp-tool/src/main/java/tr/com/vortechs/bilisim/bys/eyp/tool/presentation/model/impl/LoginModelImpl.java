@@ -11,10 +11,14 @@ public class LoginModelImpl extends BaseModelImpl implements LoginModel{
 
 	@Autowired
 	private LoginController controller;
-	
-	
+
 	@Override
-	public void jump() {
-		System.out.println("jump!");
+	public boolean login(String username,String password) 
+	{
+		//TODO check username password
+		// put to context
+		return true;
 	}
+	
+	
 }
